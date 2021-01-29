@@ -3,14 +3,16 @@ import './App.css';
 
 import React from 'react';
 import ChatFeed from './components/ChatFeed';
+import LoginForm from './components/LoginForm';
 
 const App = () => {
+  if (!localStorage.getItem('username')) return <LoginForm />;
   return (
     <ChatEngine
       height="100vh"
       projectID={process.env.REACT_APP_PROJECT_ID}
-      userName="Guillermo"
-      userSecret={process.env.REACT_APP_SECRET}
+      userName={localStorage.getItem('username')}
+      userSecret={localStorage.getItem('password')}
       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
     />
   );
