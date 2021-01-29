@@ -23,6 +23,7 @@ const LoginForm = () => {
       localStorage.setItem('password', password);
 
       window.location.reload();
+      setError('');
     } catch (error) {
       setError('Incorrect credentials');
     }
@@ -54,8 +55,8 @@ const LoginForm = () => {
               <span>Start Chatting</span>
             </button>
           </div>
-          <h2 className="error">{error}</h2>
         </form>
+        <h1>{error}</h1>
       </div>
     </div>
   );
