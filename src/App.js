@@ -11,6 +11,7 @@ const App = () => {
     <ChatEngine
       height="100vh"
       projectID={process.env.REACT_APP_PROJECT_ID}
+      onTyping={(chatId, person) => console.log('Typing', chatId, person)}
       userName={localStorage.getItem('username')}
       userSecret={localStorage.getItem('password')}
       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}

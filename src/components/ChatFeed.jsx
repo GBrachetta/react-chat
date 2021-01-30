@@ -68,6 +68,7 @@ const ChatFeed = (props) => {
         </div>
       </div>
       {renderMessages()}
+      {/* {`${props.typingData && props.typingData[props.activeChat]}`} */}
       <div style={{ height: '100px' }} />
       <div className="message-form-container">
         <MessageForm {...props} chatId={activeChat} />
